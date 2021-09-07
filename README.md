@@ -27,3 +27,7 @@ git checkout -b feature/1-readme-git-code
 
 git tag "V1.0.0"
 git push --tags
+
+# Make A controller
+
+-   php artisan make:controller ControllerName
