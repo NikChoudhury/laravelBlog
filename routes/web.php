@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+
+#Optional Parameters
+Route::get('/user/{id?}', function($id=null){
+    echo $id;
+    return view('user');
+});
