@@ -16,3 +16,14 @@ git checkout -b branchName
 ## Create New Feature Brach
 
 git checkout -b feature/1-readme-git-code
+
+## Merge Branch
+
+-   First Checkout that branch where wana merge
+    git merge master
+    git push
+
+## Tag
+
+git tag "V1.0.0"
+git push --tags
