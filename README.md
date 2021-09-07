@@ -27,3 +27,13 @@ git checkout -b feature/1-readme-git-code
 
 git tag "V1.0.0"
 git push --tags
+
+# Make A controller
+
+-   php artisan make:controller ControllerName
+
+# Make A Component
+
+-   php artisan make:component ComponentName
+    -   this will create two file one is on views/components
+    -   and the other is on app/Views/components
