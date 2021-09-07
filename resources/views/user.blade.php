@@ -10,5 +10,8 @@
     <h1>
         This Is User Page 
     </h1>
+    @if ($user_id!='')
+        <h3>User Id is {{$user_id}}</h3>
+    @endif
 </body>
 </html>
