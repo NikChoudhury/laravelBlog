@@ -14,6 +14,6 @@
     <pre>php artisan make:component ComponentName</pre>
     <p>To call a Component</p>
     <pre><code>&ltx-ComponentName/&gt</code></pre>
-    <x-navbar name="NikChoudhury" age=''/>
+    <x-test name="NikChoudhury" age=''/>
 </body>
 </html>
