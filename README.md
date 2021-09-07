@@ -23,7 +23,7 @@ git checkout -b feature/1-readme-git-code
     git merge master
     git push
 
-## Tags
+## Tags -
 
 git tag "V1.0.0"
 git push --tags
