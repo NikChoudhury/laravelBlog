@@ -31,3 +31,7 @@ Route::get('users_controller',[User::class, 'index']);
 Route::get('/user_id/{id?}',[UserController::class, 'getId']);
 //Old Method 
 // Route::get('/users_controller','App\Http\Controllers\User@index');
+
+#Component In Laravel
+Route::view('page','page');
+Route::view('page2','page2');
