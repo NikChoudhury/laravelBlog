@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\User;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +24,10 @@ Route::get('/user/{id?}', function($id=null){
     echo $id;
     return view('user');
 });
+
+#To Call A Controller
+Route::get('users_controller',[User::class, 'index']);
+
+Route::get('/user_id/{id?}',[UserController::class, 'getId']);
+//Old Method 
+// Route::get('/users_controller','App\Http\Controllers\User@index');
