@@ -1,5 +1,5 @@
 <div>
-    <h1>I am Navbar </h1>
+    <h1>I am Test Component </h1>
     @if ($name!='')
     <p>My Name is {{$name}}</p>
     @endif
