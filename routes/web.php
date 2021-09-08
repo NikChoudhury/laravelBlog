@@ -44,3 +44,8 @@ Route::view('my_form','form');
 #To handle A form
 Route::post('formSubmit', [FormController::class, 'index'] );
 Route::get('formSubmit', [FormController::class, 'index'] );
+
+#Blade Tamplate in Laravel
+Route::get('Web_Tamplate', function(){
+    return view('web',array('data'=>array('name'=>'Nik')),array('newdata'=>array(1,2,3,4,5,6,7)));
+});
