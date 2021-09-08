@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FormController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -35,3 +37,10 @@ Route::get('/user_id/{id?}',[UserController::class, 'getId']);
 #Component In Laravel
 Route::view('page','page');
 Route::view('page2','page2');
+
+#Form in Laravel
+Route::view('my_form','form');
+
+#To handle A form
+Route::post('formSubmit', [FormController::class, 'index'] );
+Route::get('formSubmit', [FormController::class, 'index'] );
