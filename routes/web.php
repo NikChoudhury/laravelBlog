@@ -35,7 +35,7 @@ Route::get('/user_id/{id?}',[UserController::class, 'getId']);
 // Route::get('/users_controller','App\Http\Controllers\User@index');
 
 #Component In Laravel
-Route::view('page','page');
+// Route::view('page','page');
 Route::view('page2','page2');
 
 #Form in Laravel
@@ -52,4 +52,16 @@ Route::get('Web_Tamplate', function(){
 
 #Blade Template Part2 (Layout)
 Route::view('news1','news1');
-Route::view('news2','news2');
+Route::view('news2','news2')->middleware('UserCheck'); //Route Middleware
+
+#Middleware In Laravel
+Route::view('denied','denied');
+
+#Route Middleware
+// Route::view('news2','news2')->middleware('UserCheck');
+
+#Group Middleware
+Route::middleware(['UserCheck'])->group(function () {
+    Route::view('news1','news1');
+    Route::view('page','page');
+});
