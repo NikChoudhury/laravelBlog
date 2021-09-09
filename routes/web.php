@@ -49,3 +49,7 @@ Route::get('formSubmit', [FormController::class, 'index'] );
 Route::get('Web_Tamplate', function(){
     return view('web',array('data'=>array('name'=>'Nik')),array('newdata'=>array(1,2,3,4,5,6,7)));
 });
+
+#Blade Template Part2 (Layout)
+Route::view('news1','news1');
+Route::view('news2','news2');
