@@ -9,12 +9,20 @@
         .error{
             color: red;
         }
+        .success{
+            color: green;
+        }
     </style>
 </head>
 <body>
     <h1>Form Validation In Laravel</h1>
+    @if ($message = Session::get('success'))
+        <div class="success">
+                <strong>{{ $message }}</strong>
+        </div>
+    @endif
     <div class="container">
-        <form action="formValidation" method="post">
+        <form action="formValidation" method="post" enctype="multipart/form-data">
         {{@csrf_field()}}
             <!-- In Laravel 8 we Can Use @csrf for Token -->
             <!-- @csrf -->
@@ -44,6 +52,17 @@
                                 {{$message}}
                             @enderror
                         </span> -->
+                    </td>
+                </tr>
+                <tr>
+                    <td>Image</td>
+                    <td>
+                        <input type="file" name="doc" id="image">
+                        <br>
+                        @if($errors->has('doc'))
+                            <span class="error">{{ $errors->first('doc') }}</span>
+                        @endif
+                     
                     </td>
                 </tr>
                 <tr>    
