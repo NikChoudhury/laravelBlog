@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\User;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
-
+use App\Http\Controllers\ValidForm;
 
 /*
 |--------------------------------------------------------------------------
@@ -65,3 +65,7 @@ Route::middleware(['UserCheck'])->group(function () {
     Route::view('news1','news1');
     Route::view('page','page');
 });
+
+#Form Validation In Laravel
+Route::view('form-validation','formValidation');
+Route::post('formValidation', [ValidForm::class, 'index'] );

@@ -51,3 +51,7 @@ Middleware provide a convenient mechanism for inspecting and filtering HTTP requ
 > php artisan make:middleware MiddlewareName
 
     -   this will create a file one is on app/Http/Middleware/MiddlewareName.php
+
+# Form Validation In Laravel
+
+For Submiting a Form in Laravel need A "\_token" which will get From the {{@csrf_field()}} function.
