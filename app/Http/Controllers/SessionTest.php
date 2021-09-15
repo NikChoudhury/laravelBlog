@@ -41,4 +41,33 @@ class SessionTest extends Controller
             echo "The Session Name Is Not exist";
         }
     }
+    function user_login_check(Request $req){
+        if ($req->session()->has('name')) {
+            return view('profile');
+        }else{
+            $req->session()->flash('error', 'Access Denied !!');
+            return redirect('login');
+        }
+    }
+    function user_login_submit(Request $req){
+        $req->validate([
+            'email'=>'required|email',
+            'password'=>'required',
+        ],
+        [
+            'email.required' => 'We need to know your email address!',
+            'email.email' => 'Please enter a valid email address.'
+        ]
+        );
+        $email= $req->input('email');
+        $password= $req->input('password');
+
+        if ($email=='a@gmail.com' && $password =='1234') {
+            $req->session()->put('name','Nikumani Choudhury');
+            return redirect('profile');
+        }else{
+            $req->session()->flash('error', 'Please Enter Valid login Details!!');
+            return redirect('login');
+        }
+    }
 }
