@@ -49,6 +49,10 @@ class Kernel extends HttpKernel
         'UserCheck' => [
             \App\Http\Middleware\UserCheck::class
         ],
+        // User Auth Middleware
+        'UserAuth' => [
+            \App\Http\Middleware\UserAuth::class
+        ]
     ];
 
     /**

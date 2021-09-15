@@ -5,6 +5,7 @@ use App\Http\Controllers\User;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ValidForm;
+use App\Http\Controllers\SessionTest;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,3 +70,33 @@ Route::middleware(['UserCheck'])->group(function () {
 #Form Validation In Laravel
 Route::view('form-validation','formValidation');
 Route::post('formValidation', [ValidForm::class, 'index'] );
+
+#Session In Laravel
+Route::get('session-set', [SessionTest::class, 'session_set']);
+Route::get('session-get', [SessionTest::class, 'session_get']);
+Route::get('session-remove', [SessionTest::class, 'session_remove']);
+Route::get('session-check', [SessionTest::class, 'session_check']);
+
+Route::view('login', 'login');
+Route::post('userLoginSubmit', [SessionTest::class, 'user_login_submit']);
+// Route::get('profile', [SessionTest::class, 'user_login_check']);
+/*Route::get('logout', function () {
+    if (session()->has('name')) {
+        session()->forget('name');
+        session()->flash('error', 'Logout Successfull !!');
+        return redirect('login');
+    }else{
+        session()->flash('error', 'Access Denied !!');
+        return redirect('login');
+    }
+});*/
+#Using Middleware
+Route::middleware(['UserAuth'])->group(function () {
+    Route::view('profile','profile');
+    Route::get('logout', function () {
+       session()->has('name'); 
+            session()->forget('name');
+            session()->flash('error', 'Logout Successfull !!');
+            return redirect('login');
+    });
+});
