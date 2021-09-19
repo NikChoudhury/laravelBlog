@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\FormController;
 use App\Http\Controllers\ValidForm;
 use App\Http\Controllers\SessionTest;
+use App\Http\Controllers\DB_test;
 
 /*
 |--------------------------------------------------------------------------
@@ -100,3 +101,9 @@ Route::middleware(['UserAuth'])->group(function () {
             return redirect('login');
     });
 });
+
+# Laravel Query Builder
+Route::get('select', [DB_test::class, 'select']);
+Route::get('insert', [DB_test::class, 'insert']);
+Route::get('update', [DB_test::class, 'update']);
+Route::get('delete', [DB_test::class, 'delete']);
