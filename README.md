@@ -55,3 +55,7 @@ Middleware provide a convenient mechanism for inspecting and filtering HTTP requ
 # Form Validation In Laravel
 
 For Submiting a Form in Laravel need A "\_token" which will get From the {{@csrf_field()}} function.
+
+# Query Builder
+
+Laravel's database query builder provides a convenient, fluent interface to creating and running database queries. It can be used to perform most database operations in your application and works perfectly with all of Laravel's supported database systems.
