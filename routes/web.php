@@ -7,6 +7,7 @@ use App\Http\Controllers\FormController;
 use App\Http\Controllers\ValidForm;
 use App\Http\Controllers\SessionTest;
 use App\Http\Controllers\DB_test;
+use App\Http\Controllers\UserProfile;
 
 /*
 |--------------------------------------------------------------------------
@@ -107,3 +108,9 @@ Route::get('select', [DB_test::class, 'select']);
 Route::get('insert', [DB_test::class, 'insert']);
 Route::get('update', [DB_test::class, 'update']);
 Route::get('delete', [DB_test::class, 'delete']);
+
+# Eloquent ORM (Model)
+Route::get('get_data', [UserProfile::class, 'getData']);
+Route::get('delete_data', [UserProfile::class, 'deleteData']);
+Route::get('insert_data', [UserProfile::class, 'insertData']);
+Route::get('update_data', [UserProfile::class, 'updateData']);
